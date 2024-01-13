@@ -1,0 +1,121 @@
+Question No 1:
+
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    float floatArray[8];
+    float sum = 0.0;
+    float average;
+
+    // Input values into the array
+    printf("Enter 8 float values, pressing Enter after each:\n");
+
+    for (int i = 0; i < 8; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%f", &floatArray[i]);
+        sum += floatArray[i];
+    }
+
+    // Calculate the average
+    average = sum / 8.0;
+
+    // Print the average
+    printf("Average of the entered values: %f\n", average);
+
+    return 0;
+}
+
+-----------------------------------
+
+Question no 2:
+
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    int numbers[10];
+    int input;
+    int count = 0;
+
+    // Input values until -1 is entered or the array is full
+    printf("Enter numbers (up to 10) and enter -1 to finish:\n");
+
+    do {
+        printf("Number %d: ", count + 1);
+        scanf("%d", &input);
+
+        if (input != -1) {
+            // Store the number in the array
+            numbers[count] = input;
+            count++;
+        }
+
+    } while (input != -1 && count < 10);
+
+    // Print the square of each element
+    printf("\nSquares of the entered numbers:\n");
+    for (int i = 0; i < count; i++) {
+        printf("Square of %d: %d\n", numbers[i], numbers[i] * numbers[i]);
+    }
+
+    return 0;
+}
+
+--------------------------------------
+
+question No 3:
+
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    int maxNumber = 99999;  // Maximum 5-digit number
+    int digits[5];
+    
+    // Assign digits to the array
+    for (int i = 4; i >= 0; i--) {
+        digits[i] = maxNumber % 10;
+        maxNumber /= 10;
+    }
+
+    // Print the array
+    printf("Digits of the maximum 5-digit number:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", digits[i]);
+    }
+    
+    return 0;
+}
+
+--------------------------------------------
+
+Question No: 4
+
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    double elements[10];
+
+    // Input values into the array
+    printf("Enter 10 elements, pressing Enter after each:\n");
+
+    for (int i = 0; i < 10; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%lf", &elements[i]);
+    }
+
+    // Print the array in reverse order
+    printf("\nArray in reverse order:\n");
+    for (int i = 9; i >= 0; i--) {
+        printf("%.1lf", elements[i]);
+
+        // Print a comma and space after all elements except the last one
+        if (i > 0) {
+            printf(", ");
+        }
+    }
+
+    return 0;
+}
